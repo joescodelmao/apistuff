@@ -22,7 +22,7 @@ def get_top_tracks(artist_id):
     return top_tracks['tracks']
 
 def main():
-    artist_name = 'Drake'
+    artist_name = #insert any artist on spotify ex: 'Drake'
     artist_id = get_artist_id(artist_name)
 
     if artist_id:
