@@ -1,9 +1,10 @@
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
+from difflib import get_close_matches
 
-# Replace these with your own credentials
-CLIENT_ID = # my client id here
-CLIENT_SECRET = # my client secret here
+# Use your own credentials from your Spoitfy App
+CLIENT_ID = '14f2a67334ad4727b8602de10e2ee3a0'
+CLIENT_SECRET = '8f6960ecade6459386cce40a90d31867'
 
 # Initialize the Spotify API client
 client_credentials_manager = SpotifyClientCredentials(client_id=CLIENT_ID, client_secret=CLIENT_SECRET)
@@ -16,6 +17,12 @@ def get_artist_id(artist_name):
         return result['artists']['items'][0]['id']
     else:
         return None
+        
+def suggest_similar_artists(artist_name):
+    # Use difflib to suggest similar artist names
+    artist_names = [artist['name'] for artist in sp.search(q='', type='artist')['artists']['items']]
+    suggestions = get_close_matches(artist_name, artist_names)
+    return suggestions
 
 def get_top_tracks(artist_id):
     # Get the top tracks for the artist
