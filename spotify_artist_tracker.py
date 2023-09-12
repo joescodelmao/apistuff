@@ -3,8 +3,8 @@ from spotipy.oauth2 import SpotifyClientCredentials
 from difflib import get_close_matches
 
 # Use your own credentials from your Spoitfy App
-CLIENT_ID = '14f2a67334ad4727b8602de10e2ee3a0'
-CLIENT_SECRET = '8f6960ecade6459386cce40a90d31867'
+CLIENT_ID = # your id 
+CLIENT_SECRET = # your secret
 
 # Initialize the Spotify API client
 client_credentials_manager = SpotifyClientCredentials(client_id=CLIENT_ID, client_secret=CLIENT_SECRET)
